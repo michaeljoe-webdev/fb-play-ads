@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://play.google.com/store/apps/details?id=com.yumri.pos",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://play.google.com/store/apps/details?id=com.yumri.pos",
+      "permanent": true
+    }
+  ]
+}
