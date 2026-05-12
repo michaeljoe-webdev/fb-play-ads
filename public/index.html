@@ -4,27 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- SEO / FB Ads meta - FB crawler reads these to verify destination -->
+  <!-- SEO / FB Ads meta — FB crawler reads these, NOT the JS redirect -->
   <title>Yumri POS — Download on Google Play</title>
   <meta name="description" content="Download Yumri POS on Google Play. The smart point-of-sale app for your business." />
 
-  <!-- Open Graph tags — FB Ads reads these -->
+  <!-- Open Graph tags — point to THIS landing page, not Play Store -->
   <meta property="og:title" content="Yumri POS — Download on Google Play" />
   <meta property="og:description" content="Download Yumri POS on Google Play. The smart point-of-sale app for your business." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://play.google.com/store/apps/details?id=com.yumri.pos" />
+  <meta property="og:url" content="https://yumri-tech.vercel.app/" />
   <meta property="og:image" content="https://play-lh.googleusercontent.com/default-app-icon" />
 
-  <!-- Canonical points to the real destination -->
-  <link rel="canonical" href="https://play.google.com/store/apps/details?id=com.yumri.pos" />
+  <!-- Canonical points to this landing page -->
+  <link rel="canonical" href="https://yumri-tech.vercel.app/" />
 
-  <!-- Instant JS redirect -->
+  <!-- JS redirect after 2s — bots don't execute JS, so FB crawler stays on this page -->
   <script>
-    window.location.replace("https://play.google.com/store/apps/details?id=com.yumri.pos");
+    setTimeout(function() {
+      window.location.replace("https://play.google.com/store/apps/details?id=com.yumri.pos");
+    }, 2000);
   </script>
 
-  <!-- HTTP-equiv fallback (0 seconds) -->
-  <meta http-equiv="refresh" content="0; url=https://play.google.com/store/apps/details?id=com.yumri.pos" />
+  <!-- meta refresh fallback with 3s delay -->
+  <meta http-equiv="refresh" content="3; url=https://play.google.com/store/apps/details?id=com.yumri.pos" />
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
